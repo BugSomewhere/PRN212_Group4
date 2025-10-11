@@ -10,5 +10,10 @@
   <ItemGroup>
     <ProjectReference Include="..\PRN212_Group4.BLL\PRN212_Group4.BLL.csproj" />
   </ItemGroup>
+	<ItemGroup>
+		<None Update="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 
 </Project>

@@ -7,10 +7,28 @@
         mc:Ignorable="d"
         Title="ProductListWindow" Height="450" Width="800" Background="#FF99CC" FontFamily="Arial" FontSize="14" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="listProduct"  Margin="30,81,152,39" AutoGenerateColumns="true">
+        <DataGrid x:Name="listProduct"  Margin="30,81,152,39" AutoGenerateColumns="true" MouseDoubleClick="listProduct_MouseDoubleClick" SelectionMode="Extended">
             <DataGrid.Columns>
-                
+
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="Create_btn"
+        Content="Add"
+        HorizontalAlignment="Left"
+        Margin="30,30,0,0"
+        VerticalAlignment="Top"
+        Height="46"
+        Width="150"
+        Click="Create_btn_Click"/>
+
+        <Button x:Name="Cart_btn"
+        Content="Giỏ hàng"
+        HorizontalAlignment="Left"
+         Margin="200,30,0,0"
+        VerticalAlignment="Top"
+        Height="46"
+        Width="150"
+        Click="Cart_btn_Click"/>
+
     </Grid>
 </Window>

@@ -29,6 +29,7 @@ public partial class PrnGroupProjectContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
+
     private string GetConnectionString()
     {
         IConfiguration config = new ConfigurationBuilder()
@@ -40,9 +41,22 @@ public partial class PrnGroupProjectContext : DbContext
         return strConn;
     }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(GetConnectionString());
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(AppContext.BaseDirectory)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .Build();
 
-    
+            var connectionString = config.GetConnectionString("DefaultConnection");
+            optionsBuilder.UseSqlServer(connectionString);
+        }
+    }
+
+
+
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PRN212_Group4.BLL;
+using PRN212_Group4.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace PRN212_Group4
 {
-    /// <summary>
-    /// Interaction logic for ProductListWindow.xaml
-    /// </summary>
     public partial class ProductListWindow : Window
     {
         public ProductListWindow()
@@ -25,6 +24,37 @@ namespace PRN212_Group4
         }
 
         private BLL.ProductService service = new();
+
+        private void Create_btn_Click(object sender, RoutedEventArgs e)
+        {
+            AddProductWindow addProductWindow = new AddProductWindow();
+
+            bool? result = addProductWindow.ShowDialog();
+            if (result == true)
+            {
+                listProduct.ItemsSource = null;
+                listProduct.ItemsSource = service.GetAllProducts();
+            }
+        }
+
+        private readonly CartService _cart = new();
+
+        private void listProduct_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selected = listProduct.SelectedItem as PRN212_Group4.DAL.Entities.Product;
+            if (selected == null) return;
+
+            ProductDetailPopup popup = new ProductDetailPopup(selected, _cart);
+            popup.Owner = this;
+            popup.ShowDialog();
+        }
+
+        private void Cart_btn_Click(object sender, RoutedEventArgs e)
+        {
+            CartWindow cartWindow = new CartWindow(_cart);
+            cartWindow.ShowDialog();
+        }
+
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

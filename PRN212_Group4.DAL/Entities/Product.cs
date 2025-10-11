@@ -26,4 +26,5 @@ public partial class Product
     public string? Color { get; set; }
 
     public string? Dimension { get; set; }
+
 }
