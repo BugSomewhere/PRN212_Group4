@@ -23,7 +23,7 @@ namespace PRN212_Group4
                 txtFullName.Text = userToUpdate.FullName;
                 txtEmail.Text = userToUpdate.Email;
                 txtRoleId.Text = userToUpdate.RoleId.ToString();
-                txtPassword.Password = userToUpdate.Password; // Lưu ý: PasswordBox không bind trực tiếp, chỉ hiển thị placeholder
+                txtPassword.Password = userToUpdate.Password;
                 txtTotalCredit.Text = userToUpdate.TotalCredit.ToString();
             }
         }
