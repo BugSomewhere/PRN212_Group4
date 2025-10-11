@@ -17,3 +17,5 @@ public partial class User
 
     public decimal? TotalCredit { get; set; }
 }
+
+
