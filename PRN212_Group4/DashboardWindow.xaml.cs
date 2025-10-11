@@ -40,7 +40,7 @@ namespace PRN212_Group4
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ProductListWindow w = new();
-            w.ShowDialog();
+            w.Show();
             Close();
         }
 

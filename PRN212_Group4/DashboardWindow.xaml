@@ -7,16 +7,17 @@
         mc:Ignorable="d"
         Title="DashboardWindow" Height="450" Width="800" Loaded="Window_Loaded" Background="#FF99CC" FontFamily="Arial" FontSize="14">
     <Grid>
-        <DataGrid x:Name="listUser"  Margin="30,81,152,39" AutoGenerateColumns="False">
+        <DataGrid x:Name="listUser" Margin="30,81,152,39" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Role" Binding="{Binding RoleId}"/>
-                <DataGridTextColumn Header="FullName" Binding="{Binding FullName}"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="TotalCredit" Binding="{Binding TotalCredit}"/>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="50"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding RoleId}" Width="50"/>
+                <DataGridTextColumn Header="FullName" Binding="{Binding FullName}" Width="100"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="150"/>
+                <DataGridTextColumn Header="TotalCredit" Binding="{Binding TotalCredit}" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="ProductList" HorizontalAlignment="Left" Margin="674,81,0,0" VerticalAlignment="Top" Height="45" Width="91" Click="Button_Click"/>
         <Button x:Name="btnUserManagement" Content="User Management" HorizontalAlignment="Left" Margin="674,131,0,0" VerticalAlignment="Top" Height="45" Width="91" Click="UserManagement_Click"/>
+        <Label Content="Dashboard Management" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" Height="45" Width="328" FontSize="28" Background="#FFCCE5D3"/>
     </Grid>
 </Window>

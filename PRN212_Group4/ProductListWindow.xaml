@@ -7,10 +7,13 @@
         mc:Ignorable="d"
         Title="ProductListWindow" Height="450" Width="800" Background="#FF99CC" FontFamily="Arial" FontSize="14" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="listProduct"  Margin="30,81,152,39" AutoGenerateColumns="true">
+        <Label Content="Products Management" HorizontalAlignment="Left" Margin="30,15,0,0" VerticalAlignment="Top" Height="45" Width="328" FontSize="28" Background="#FFCCE5D3"/>
+        <DataGrid x:Name="listProduct"  Margin="30,81,51,39" AutoGenerateColumns="true">
             <DataGrid.Columns>
-                
+
             </DataGrid.Columns>
         </DataGrid>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="427,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Height="36" FontSize="25"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="647,24,0,0" VerticalAlignment="Top" Height="36" Width="102" FontSize="25" Click="Button_Click1"/>
     </Grid>
 </Window>

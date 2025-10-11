@@ -31,7 +31,7 @@ namespace Login_Register
             UserService userService = new UserService();
 
             var user = userService.Login(Email.Text, Password.Password);
-            if (user != null)
+            if (user != null && user.RoleId == 1)
             {
                 MessageBox.Show("Login successful!");
                 // Open the main window or dashboard here
@@ -39,10 +39,16 @@ namespace Login_Register
                 d.Show();
                 this.Close();
             }
-            else
+            else if (user != null && user.RoleId == 2)
             {
-                MessageBox.Show("Invalid email or password.");
+                MessageBox.Show("Login successful!");
+                // Open the main window or dashboard here
+                HomePageWindow h = new();
+                h.Show();
+                this.Close();
             }
+            else MessageBox.Show("Invalid email or password.");
+            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

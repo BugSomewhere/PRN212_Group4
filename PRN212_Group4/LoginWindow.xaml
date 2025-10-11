@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="LoginWindow" Height="450" Width="800" Background="#FF99CC" FontFamily="Arial" FontSize="16">
     <Grid>
+        <Label Content="Login" HorizontalAlignment="Center" Margin="0,41,0,0" VerticalAlignment="Top" Height="45" Width="88" FontSize="28" Background="#FFCCE5D3"/>
         <Label Content="Email:" HorizontalAlignment="Left" Margin="85,142,0,0" VerticalAlignment="Top" Height="43" Width="110" FontSize="22"/>
         <Label Content="Password:" HorizontalAlignment="Left" Margin="85,217,0,0" VerticalAlignment="Top" Height="43" Width="110" FontSize="22"/>
-        <Label Content="Login" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Height="71" Width="110" FontSize="40"/>
         <TextBox x:Name="Email" HorizontalAlignment="Left" Margin="244,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" Height="37" FontSize="22"/>
         <Button Content="Login" HorizontalAlignment="Left" Margin="518,320,0,0" VerticalAlignment="Top" Height="58" Width="100" FontSize="22" Click="Button_Click"/>
         <Button Content="Register" HorizontalAlignment="Left" Margin="244,320,0,0" VerticalAlignment="Top" Height="58" Width="118" FontSize="22" Click="Button_Click_1"/>

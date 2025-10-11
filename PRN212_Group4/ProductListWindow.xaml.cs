@@ -30,5 +30,11 @@ namespace PRN212_Group4
         {
             listProduct.ItemsSource = service.GetAllProducts();
         }
+
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtSearch.Text))
+                listProduct.ItemsSource = service.SearchProducts(txtSearch.Text);
+        }
     }
 }
