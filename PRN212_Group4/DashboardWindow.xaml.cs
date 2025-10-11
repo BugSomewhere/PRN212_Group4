@@ -20,12 +20,11 @@ namespace PRN212_Group4
     /// </summary>
     public partial class DashboardWindow : Window
     {
+        private UserService service = new();
         public DashboardWindow()
         {
             InitializeComponent();
         }
-
-        private UserService service = new();
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -37,6 +36,14 @@ namespace PRN212_Group4
             ProductListWindow w = new();
             w.ShowDialog();
             this.Close();
+        }
+
+        private void UserManagement_Click(object sender, RoutedEventArgs e)
+        {
+            UserManagementWindow w = new();
+            w.ShowDialog();
+            //k close
+            listUser.ItemsSource = service.GetAllUsers();
         }
     }
 }
