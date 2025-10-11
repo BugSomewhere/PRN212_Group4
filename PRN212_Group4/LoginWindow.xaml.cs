@@ -1,4 +1,5 @@
-using Login_Register.BLL.Services;
+using PRN212_Group4;
+using PRN212_Group4.BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,13 +30,13 @@ namespace Login_Register
         {
             UserService userService = new UserService();
 
-            var user = userService.Login(Email.Text, Password.Text);
+            var user = userService.Login(Email.Text, Password.Password);
             if (user != null)
             {
                 MessageBox.Show("Login successful!");
                 // Open the main window or dashboard here
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
+                DashboardWindow d = new();
+                d.Show();
                 this.Close();
             }
             else

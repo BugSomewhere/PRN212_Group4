@@ -1,4 +1,6 @@
-using Login_Register.BLL.Services;
+
+using PRN212_Group4.BLL;
+using PRN212_Group4.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +30,7 @@ namespace Login_Register
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             UserService userService = new UserService();
-            var user = new DAL.Entities.User
+            var user = new User
             {
                 Email = Email.Text,
                 Password = Password.Text,

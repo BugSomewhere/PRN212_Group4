@@ -14,16 +14,34 @@ namespace PRN212_Group4.BLL
         private PrnGroupProjectContext repo = new();
         public User? Login(string email, string password)
         {
-            return repo.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+            return repo.Users.FirstOrDefault(u => u.Email.ToLower() == email.ToLower() && u.Password.ToLower() == password.ToLower());
         }
 
-        public List<User> GetAllUsers()
+        
+           public List<User> GetAllUsers()
         {
-            return repo.Users.ToList();
+            repo.Roles.Include(r => r.Id).ToList();
+            return repo.Users.Include(u => u.RoleId).ToList();
         }
+
+        
         public User? GetUserById(int id)
         {
             return repo.Users.FirstOrDefault(u => u.Id == id);
+        }
+
+        public Boolean Register(User user)
+        {
+            var existingUser = repo.Users.FirstOrDefault(u => u.Email == user.Email);
+            user.TotalCredit = 100000; // Initialize TotalCredit to 0 for new users
+            user.RoleId = 2; // Default role is User
+            if (existingUser != null)
+            {
+                return false;
+            }
+            repo.Users.Add(user);
+            repo.SaveChanges();
+            return true;
         }
 
         public void DeleteUser(int id)

@@ -18,12 +18,17 @@ namespace PRN212_Group4
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dgUsers.ItemsSource = service.GetAllUsers();
+            listUser.ItemsSource = service.GetAllUsers();
+        }
+
+        public void RefreshUserList()
+        {
+            listUser.ItemsSource = service.GetAllUsers();
         }
 
         private void dgUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            selectedUser = dgUsers.SelectedItem as User;
+            selectedUser = listUser.SelectedItem as User;
             btnDelete.IsEnabled = selectedUser != null;
             btnUpdate.IsEnabled = selectedUser != null;
         }
@@ -33,7 +38,7 @@ namespace PRN212_Group4
             if (selectedUser != null && MessageBox.Show("Bạn có chắc muốn xóa user này?", "Xác nhận", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 service.DeleteUser(selectedUser.Id);
-                dgUsers.ItemsSource = service.GetAllUsers(); // Refresh list
+                listUser.ItemsSource = service.GetAllUsers(); // Refresh list
                 selectedUser = null;
                 btnDelete.IsEnabled = false;
                 btnUpdate.IsEnabled = false;
@@ -46,12 +51,14 @@ namespace PRN212_Group4
             {
                 UpdateUserWindow updateWindow = new(selectedUser);
                 updateWindow.ShowDialog();
-                dgUsers.ItemsSource = service.GetAllUsers(); // Refresh sau khi update
+                listUser.ItemsSource = service.GetAllUsers(); // Refresh sau khi update
             }
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
+            DashboardWindow d = new();
+            d.Show();
             this.Close();
         }
     }

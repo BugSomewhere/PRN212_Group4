@@ -26,24 +26,30 @@ namespace PRN212_Group4
             InitializeComponent();
         }
 
+        public void refreshData()
+        {
+            listUser.ItemsSource = service.GetAllUsers();
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
            listUser.ItemsSource = service.GetAllUsers();
+            refreshData();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ProductListWindow w = new();
             w.ShowDialog();
-            this.Close();
+            Close();
         }
 
         private void UserManagement_Click(object sender, RoutedEventArgs e)
         {
             UserManagementWindow w = new();
             w.ShowDialog();
-            //k close
             listUser.ItemsSource = service.GetAllUsers();
+            Close();
         }
     }
 }

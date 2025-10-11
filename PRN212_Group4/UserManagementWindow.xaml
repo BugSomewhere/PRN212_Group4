@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="User Management" Height="450" Width="800" Background="#FF99CC" FontFamily="Arial" FontSize="14" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="dgUsers" Margin="30,81,152,100" AutoGenerateColumns="False" SelectionChanged="dgUsers_SelectionChanged" IsReadOnly="True">
+        <DataGrid x:Name="listUser" Margin="30,81,152,100" AutoGenerateColumns="False" SelectionChanged="dgUsers_SelectionChanged" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="50"/>
                 <DataGridTextColumn Header="Full Name" Binding="{Binding FullName}" Width="150"/>
