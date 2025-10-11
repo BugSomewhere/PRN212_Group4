@@ -23,5 +23,9 @@ namespace PRN212_Group4.BLL
                        .Where(p => p.Title.Contains(keyword))
                        .ToList();
         }
+        public DAL.Entities.Product? GetProductById(int id)
+        {
+            return repo.Products.Find(id);
+        }
     }
 }
