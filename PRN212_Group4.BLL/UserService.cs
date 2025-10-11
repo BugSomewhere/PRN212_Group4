@@ -20,8 +20,8 @@ namespace PRN212_Group4.BLL
         
            public List<User> GetAllUsers()
         {
-            repo.Roles.Include(r => r.Id).ToList();
-            return repo.Users.Include(u => u.RoleId).ToList();
+            
+            return repo.Users.ToList();
         }
 
         
