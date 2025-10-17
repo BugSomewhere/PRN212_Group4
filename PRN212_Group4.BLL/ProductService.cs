@@ -27,5 +27,33 @@ namespace PRN212_Group4.BLL
         {
             return repo.Products.Find(id);
         }
+
+        public void UpdateProduct(DAL.Entities.Product updatedProduct)
+        {
+            var product = repo.Products.FirstOrDefault(p => p.Id == updatedProduct.Id);
+            if (product != null)
+            {
+                product.Type = updatedProduct.Type;
+                product.Status = updatedProduct.Status;
+                product.Brand = updatedProduct.Brand;
+                product.Model = updatedProduct.Model;
+                product.Title = updatedProduct.Title;
+                product.Description = updatedProduct.Description;
+                product.Price = updatedProduct.Price;
+                product.Color = updatedProduct.Color;
+                product.Dimension = updatedProduct.Dimension;
+                repo.SaveChanges();
+            }
+        }
+
+        public void DeleteProduct(int id)
+        {
+            var product = repo.Products.FirstOrDefault(p => p.Id == id);
+            if (product != null)
+            {
+                repo.Products.Remove(product);
+                repo.SaveChanges();
+            }
+        }
     }
 }

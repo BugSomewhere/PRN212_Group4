@@ -5,15 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRN212_Group4"
         mc:Ignorable="d"
-        Title="ProductListWindow" Height="450" Width="800" Background="#FF99CC" FontFamily="Arial" FontSize="14" Loaded="Window_Loaded">
+        Title="Product Management" Height="500" Width="900" Background="#FF99CC" FontFamily="Arial" FontSize="14" Loaded="Window_Loaded">
     <Grid>
         <Label Content="Products Management" HorizontalAlignment="Left" Margin="30,15,0,0" VerticalAlignment="Top" Height="45" Width="328" FontSize="28" Background="#FFCCE5D3"/>
-        <DataGrid x:Name="listProduct"  Margin="30,81,51,39" AutoGenerateColumns="true">
+        <DataGrid x:Name="listProduct" Margin="30,81,30,100" AutoGenerateColumns="False" SelectionChanged="dgProducts_SelectionChanged" IsReadOnly="True">
             <DataGrid.Columns>
-
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="50"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="80"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="80"/>
+                <DataGridTextColumn Header="Brand" Binding="{Binding Brand}" Width="100"/>
+                <DataGridTextColumn Header="Model" Binding="{Binding Model}" Width="100"/>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="150"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="100"/>
+                <DataGridTextColumn Header="Color" Binding="{Binding Color}" Width="80"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="427,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Height="36" FontSize="25"/>
         <Button Content="Search" HorizontalAlignment="Left" Margin="647,24,0,0" VerticalAlignment="Top" Height="36" Width="102" FontSize="25" Click="Button_Click1"/>
+        <Button Content="Delete Selected Product" HorizontalAlignment="Left" Margin="30,411,0,0" VerticalAlignment="Top" Height="45" Width="150" Click="Delete_Click" IsEnabled="False" x:Name="btnDelete"/>
+        <Button Content="Update Selected Product" HorizontalAlignment="Left" Margin="200,411,0,0" VerticalAlignment="Top" Height="45" Width="150" Click="Update_Click" IsEnabled="False" x:Name="btnUpdate"/>
+        <Button Content="Back to Dashboard" HorizontalAlignment="Right" Margin="0,411,30,0" VerticalAlignment="Top" Height="45" Width="150" Click="Back_Click"/>
     </Grid>
 </Window>
