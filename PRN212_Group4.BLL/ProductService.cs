@@ -16,6 +16,12 @@ namespace PRN212_Group4.BLL
             return repo.Products.ToList();
         }
 
+        public void AddProduct(DAL.Entities.Product product)
+        {
+            repo.Products.Add(product);
+            repo.SaveChanges();
+        }
+
         public List<DAL.Entities.Product> SearchProducts(string keyword)
         {
             // Tìm kiếm sản phẩm theo title
