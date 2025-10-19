@@ -89,7 +89,7 @@ namespace PRN212_Group4.BLL
             var product = repo.Products.FirstOrDefault(p => p.Id == id);
             if (product != null)
             {
-                product.Status = "paid";
+                product.Status = "Paid";
                 repo.SaveChanges();
             }
         }

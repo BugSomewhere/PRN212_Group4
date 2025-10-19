@@ -15,6 +15,7 @@ namespace PRN212_Group4
     public partial class PaymentWindow : Window
     {
         private readonly List<Product> _products;
+        private ProductService service = new();
 
         public PaymentWindow(List<Product> products)
         {
@@ -73,13 +74,14 @@ namespace PRN212_Group4
                 foreach (var product in _products)
                 {
                     orderService.CreateOrder(currentUserId, product.Id, product.Price ?? 0);
+                    service.UpdateProductPaidStatus(product.Id);
                 }
 
                 // Update status cho các order mới tạo (giả sử lấy last orders tương ứng số product)
                 var recentOrders = orderService.GetAllOrders().OrderByDescending(o => o.Id).Take(_products.Count).ToList();
                 foreach (var order in recentOrders)
                 {
-                    orderService.UpdateOrderStatus(order.Id, "paid");
+                    orderService.UpdateOrderStatus(order.Id, "Sucess");
                 }
 
                 MessageBox.Show($"Thanh toán thành công {_products.Count} sản phẩm, tổng cộng {total:N0} VND! Credit đã được cập nhật.");

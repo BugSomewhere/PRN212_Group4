@@ -74,7 +74,7 @@ namespace PRN212_Group4
 
             if (MessageBox.Show("Bạn có chắc muốn approve sản phẩm này?", "Xác Nhận", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                selectedProduct.Status = "approved";
+                selectedProduct.Status = "Approved";
                 productService.UpdateProduct(selectedProduct);
                 MessageBox.Show("Sản phẩm đã được approve thành công!", "Thành Công", MessageBoxButton.OK, MessageBoxImage.Information);
                 RefreshPendingProducts();
