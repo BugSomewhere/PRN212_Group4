@@ -68,10 +68,19 @@ namespace PRN212_Group4
 
         private void Order_Click(object sender, RoutedEventArgs e)
         {
+            var user = ((App)Application.Current).CurrentUser;
             RefreshProductList();
-            UserOrderWindow u = new UserOrderWindow();
-            u.Show();
-            Close();
+            if(user == null)
+            {
+                MessageBox.Show("Invalid User");
+                return;
+            }
+            else
+            {
+                UserOrderWindow u = new UserOrderWindow(user.Id);
+                u.Show();
+                Close();
+            }
         }
 
         private void Update_Account_Click(object sender, RoutedEventArgs e)
