@@ -52,7 +52,7 @@ namespace PRN212_Group4
         private void Search_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(Title.Text))
-                ProductList.ItemsSource = service.SearchProducts(Title.Text);
+                ProductList.ItemsSource = service.SearchApproveProducts(Title.Text);
             else
                 RefreshProductList();
         }
@@ -69,6 +69,11 @@ namespace PRN212_Group4
 
         private void Update_Account_Click(object sender, RoutedEventArgs e)
         {
+            if (((App)Application.Current).CurrentUser == null)
+            {
+                MessageBox.Show("Invalid User");
+                return;
+            }
             User user = ((App)Application.Current).CurrentUser;
             UpdateUserWindow updateUserWindow = new UpdateUserWindow(user);
             updateUserWindow.ShowDialog();
@@ -77,6 +82,11 @@ namespace PRN212_Group4
 
         private void Create_Order_Click(object sender, RoutedEventArgs e)
         {
+            if (((App)Application.Current).CurrentUser == null)
+            {
+                MessageBox.Show("Invalid User");
+                return;
+            }
             User user = ((App)Application.Current).CurrentUser;
             CreateProductWindow createProductWindow = new CreateProductWindow(user);
             createProductWindow.ShowDialog();

@@ -34,11 +34,23 @@ namespace PRN212_Group4.BLL
 
         public List<DAL.Entities.Product> SearchProducts(string keyword)
         {
-            // Tìm kiếm sản phẩm theo title
             return repo.Products
                        .Where(p => p.Title.Contains(keyword))
                        .ToList();
         }
+
+        public List<DAL.Entities.Product> SearchApproveProducts(string keyword)
+        {
+            return repo.Products.Where(p => p.Title.Contains(keyword) && p.Status.ToLower() == "approved").ToList();
+        }
+
+        public List<DAL.Entities.Product> SearchUserProducts(string keyword, int created_by)
+        {
+            return repo.Products
+                       .Where(p => p.Title.Contains(keyword) && p.CreatedBy == created_by)
+                       .ToList();
+        }
+
         public DAL.Entities.Product? GetProductById(int id)
         {
             return repo.Products.Find(id);

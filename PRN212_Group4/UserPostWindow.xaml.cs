@@ -31,7 +31,7 @@ namespace PRN212_Group4
 
         public void RefreshPostList()
         {
-            UserPostList.ItemsSource = service.GetAllApproveProducts();
+            UserPostList.ItemsSource = service.GetAllProductsByUserId(userID);
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -45,7 +45,7 @@ namespace PRN212_Group4
         {
             UpdateProductWindow u = new UpdateProductWindow(new Product());
             u.ShowDialog();
-            this.Close();
+            RefreshPostList();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -55,7 +55,10 @@ namespace PRN212_Group4
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Title.Text))
+                UserPostList.ItemsSource = service.SearchUserProducts(Title.Text, userID);
+            else
+                RefreshPostList();
         }
     }
 }
