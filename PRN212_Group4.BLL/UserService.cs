@@ -66,5 +66,27 @@ namespace PRN212_Group4.BLL
                 repo.SaveChanges();
             }
         }
+        //public Dictionary<string, object> GetDashboardStats()
+        //{
+        //    var usersByRole = repo.Users.GroupBy(u => u.RoleId ?? 0)
+        //                                .ToDictionary(g => g.Key, g => g.Count());
+
+        //    var productsByStatus = productService.GetAllProducts()
+        //                                         .GroupBy(p => p.Status ?? "Unknown")
+        //                                         .ToDictionary(g => g.Key, g => g.Count());
+
+        //    var totalOrders = repo.Orders.Count();
+
+        //    var totalRevenue = transactionService.GetAllTransactionDetails()
+        //                                         .Sum(td => td.Amount ?? 0);
+
+        //    return new Dictionary<string, object>
+        //    {
+        //        { "UsersByRole", usersByRole },
+        //        { "ProductsByStatus", productsByStatus },
+        //        { "TotalOrders", totalOrders },
+        //        { "TotalRevenue", totalRevenue }
+        //    };
+        //}
     }
 }

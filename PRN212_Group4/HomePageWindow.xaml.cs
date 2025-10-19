@@ -85,6 +85,11 @@ namespace PRN212_Group4
 
         private void Post_Click(object sender, RoutedEventArgs e)
         {
+            if (((App)Application.Current).CurrentUser == null)
+            {
+                MessageBox.Show("Invalid User");
+                return;
+            }
             User user = ((App)Application.Current).CurrentUser;
             UserPostWindow u = new UserPostWindow(user);
             u.Show();

@@ -24,7 +24,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Label Content="Home" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="32"/>
+        <Label Content="Home" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="32" Background="Transparent"/>
         <Label Content="Title:" HorizontalAlignment="Left" Margin="6,63,0,0" VerticalAlignment="Top" FontSize="22"/>
         <TextBox x:Name="Title" HorizontalAlignment="Left" Margin="63,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Grid.ColumnSpan="2" Height="26" FontSize="22"/>
         <Button Grid.Column="1" Content="Logout" HorizontalAlignment="Left" Margin="521,367,0,0" VerticalAlignment="Top" Height="30" Width="96" FontSize="20" Click="Logout_Click"/>

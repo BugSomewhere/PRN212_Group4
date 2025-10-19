@@ -29,6 +29,11 @@ namespace PRN212_Group4
             userID = user.Id;
         }
 
+        public void RefreshPostList()
+        {
+            UserPostList.ItemsSource = service.GetAllApproveProducts();
+        }
+
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             HomePageWindow h = new HomePageWindow();
@@ -46,6 +51,11 @@ namespace PRN212_Group4
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             UserPostList.ItemsSource = service.GetAllProductsByUserId(userID);
+        }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -1,0 +1,57 @@
+﻿<Window x:Class="PRN212_Group4.PostApprovalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRN212_Group4"
+        mc:Ignorable="d"
+        Title="Post Approval - Kiểm Duyệt Sản Phẩm" Height="600" Width="900"
+        Loaded="Window_Loaded">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <Label Grid.Row="0" Content="Kiểm Duyệt Sản Phẩm (Pending)" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+
+
+        <DataGrid x:Name="dgPendingProducts" Grid.Row="1" AutoGenerateColumns="False" SelectionChanged="dgPendingProducts_SelectionChanged" Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="200"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100"/>
+                <DataGridTextColumn Header="Brand" Binding="{Binding Brand}" Width="100"/>
+                <DataGridTextColumn Header="Model" Binding="{Binding Model}" Width="100"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="100"/>
+                <DataGridTextColumn Header="Created By" Binding="{Binding CreatedBy}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Vertical" Margin="0,0,0,10">
+            <Label Content="Chi Tiết Sản Phẩm Đã Chọn:" FontSize="16" FontWeight="Bold" Foreground="#FFFF9900" BorderBrush="Black"/>
+            <TextBlock x:Name="txtDescription" Text="Description: " Margin="0,5,0,0"/>
+            <TextBlock x:Name="txtColor" Text="Color: " Margin="0,5,0,0"/>
+            <TextBlock x:Name="txtDimension" Text="Dimension: " Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgFeedbacks" Grid.Row="3" AutoGenerateColumns="False" Height="150" Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="User ID" Binding="{Binding UserId}" Width="80"/>
+                <DataGridTextColumn Header="Comment" Binding="{Binding Comment}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label Content=" Lý Do Reject(nếu có):" Width="157"/>
+            <TextBox x:Name="txtRejectReason" Width="247" Height="30" Margin="0,0,20,0"/>
+            <Button Content="Approve" Width="100" Height="35" Click="Approve_Click" Margin="10,0"/>
+            <Button Content="Reject" Width="100" Height="35" Click="Reject_Click" Margin="10,0"/>
+            <Button Content="Back to Dashboard" Width="150" Height="35" Click="Back_Click" Margin="10,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

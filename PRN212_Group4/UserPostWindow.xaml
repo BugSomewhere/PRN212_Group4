@@ -14,8 +14,8 @@
         <Button Content="Back" HorizontalAlignment="Left" Margin="694,192,0,0" VerticalAlignment="Top" Height="39" Width="85" Click="Back_Click"/>
         <Button Content="Update" HorizontalAlignment="Left" Margin="694,119,0,0" VerticalAlignment="Top" Height="39" Width="85" Click="Update_Click"/>
         <Label Content="Title" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" FontSize="22"/>
-        <TextBox HorizontalAlignment="Left" Margin="85,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="22"/>
-        <Button Content="Search" HorizontalAlignment="Left" Margin="400,76,0,0" VerticalAlignment="Top" Height="31" Width="76"/>
+        <TextBox x:Name="Title" HorizontalAlignment="Left" Margin="85,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="22"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="400,76,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="Search_Click"/>
 
     </Grid>
 </Window>
