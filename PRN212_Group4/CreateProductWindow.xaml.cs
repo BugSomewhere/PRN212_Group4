@@ -22,9 +22,11 @@ namespace PRN212_Group4
     public partial class CreateProductWindow : Window
     {
         private readonly ProductService _service = new();
-        public CreateProductWindow()
+        private int created_by;
+        public CreateProductWindow(User user)
         {
             InitializeComponent();
+            created_by = user.Id;
         }
         private void Save_Click(object sender, RoutedEventArgs e)
         {
@@ -57,8 +59,8 @@ namespace PRN212_Group4
                     Color = txtColor.Text.Trim(),
                     Dimension = txtDimension.Text.Trim(),
                     Description = txtDescription.Text.Trim(),
-                    Status = "Available",
-                    CreatedBy = 1
+                    Status = "Pending",
+                    CreatedBy = created_by
                 };
 
                 _service.AddProduct(product);

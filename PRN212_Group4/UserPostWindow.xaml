@@ -1,0 +1,21 @@
+﻿<Window x:Class="PRN212_Group4.UserPostWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRN212_Group4"
+        mc:Ignorable="d"
+        Title="UserPostWindow" Height="450" Width="800" Background="#FF99CC" FontFamily="Arial" FontSize="16">
+    <Grid Loaded="Window_Loaded">
+        <DataGrid x:Name="UserPostList" Margin="10,119,150,10">
+            
+        </DataGrid>
+        <Label Content="User Post" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="32"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="694,192,0,0" VerticalAlignment="Top" Height="39" Width="85" Click="Back_Click"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="694,119,0,0" VerticalAlignment="Top" Height="39" Width="85" Click="Update_Click"/>
+        <Label Content="Title" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <TextBox HorizontalAlignment="Left" Margin="85,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="22"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="400,76,0,0" VerticalAlignment="Top" Height="31" Width="76"/>
+
+    </Grid>
+</Window>

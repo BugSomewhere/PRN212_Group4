@@ -46,7 +46,7 @@ namespace PRN212_Group4
 
         public void RefreshProductList()
         {
-            ProductList.ItemsSource = service.GetAllProducts();
+            ProductList.ItemsSource = service.GetAllApproveProducts();
         }
 
         private void Search_Click(object sender, RoutedEventArgs e)
@@ -59,13 +59,11 @@ namespace PRN212_Group4
 
         private void Payment_Click(object sender, RoutedEventArgs e)
         {
-
             RefreshProductList();
         }
 
         private void Order_Click(object sender, RoutedEventArgs e)
         {
-
             RefreshProductList();
         }
 
@@ -79,9 +77,18 @@ namespace PRN212_Group4
 
         private void Create_Order_Click(object sender, RoutedEventArgs e)
         {
-            CreateProductWindow createProductWindow = new();
+            User user = ((App)Application.Current).CurrentUser;
+            CreateProductWindow createProductWindow = new CreateProductWindow(user);
             createProductWindow.ShowDialog();
             RefreshProductList();
+        }
+
+        private void Post_Click(object sender, RoutedEventArgs e)
+        {
+            User user = ((App)Application.Current).CurrentUser;
+            UserPostWindow u = new UserPostWindow(user);
+            u.Show();
+            this.Close();
         }
     }
 }

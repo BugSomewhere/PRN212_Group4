@@ -33,11 +33,6 @@ namespace Login_Register
 
             var user = userService.Login(Email.Text, Password.Password);
 
-            if (user == null)
-            {
-                MessageBox.Show("Invalid user");
-                return;
-            }
 
             if (user != null && user.RoleId == 1)
             {

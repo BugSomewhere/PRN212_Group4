@@ -10,4 +10,10 @@
     <ProjectReference Include="..\PRN212_Group4.DAL\PRN212_Group4.DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="ProductService.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>

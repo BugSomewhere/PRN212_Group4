@@ -16,6 +16,16 @@ namespace PRN212_Group4.BLL
             return repo.Products.ToList();
         }
 
+        public List<DAL.Entities.Product> GetAllApproveProducts()
+        {
+            return repo.Products.Where(p => p.Status.ToLower() == "approved").ToList();
+        }
+
+        public List<DAL.Entities.Product> GetAllProductsByUserId(int userId)
+        {
+            return repo.Products.Where(p => p.CreatedBy == userId).ToList();
+        }
+
         public void AddProduct(DAL.Entities.Product product)
         {
             repo.Products.Add(product);
