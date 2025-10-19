@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -31,8 +32,18 @@ namespace Login_Register
             UserService userService = new UserService();
 
             var user = userService.Login(Email.Text, Password.Password);
+
+            if (user == null)
+            {
+                MessageBox.Show("Invalid user");
+                return;
+            }
+
             if (user != null && user.RoleId == 1)
             {
+                ((App)Application.Current).CurrentUserId = user.Id;
+
+               
                 MessageBox.Show("Login successful!");
                 // Open the main window or dashboard here
                 DashboardWindow d = new();
@@ -41,8 +52,11 @@ namespace Login_Register
             }
             else if (user != null && user.RoleId == 2)
             {
+                ((App)Application.Current).CurrentUserId = user.Id;
+
                 MessageBox.Show("Login successful!");
                 // Open the main window or dashboard here
+
                 HomePageWindow h = new();
                 h.Show();
                 this.Close();

@@ -9,6 +9,7 @@ namespace PRN212_Group4
     /// </summary>
     public partial class App : Application
     {
+        public int? CurrentUserId { get; set; }
     }
 
 }

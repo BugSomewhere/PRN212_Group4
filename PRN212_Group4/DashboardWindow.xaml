@@ -17,7 +17,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="ProductList" HorizontalAlignment="Left" Margin="674,81,0,0" VerticalAlignment="Top" Height="45" Width="91" Click="Button_Click"/>
-        <Button x:Name="btnUserManagement" Content="User Management" HorizontalAlignment="Left" Margin="674,131,0,0" VerticalAlignment="Top" Height="45" Width="91" Click="UserManagement_Click"/>
+        <Button x:Name="btnUserManagement" Content="User Management" HorizontalAlignment="Left" Margin="674,155,0,0" VerticalAlignment="Top" Height="45" Width="91" Click="UserManagement_Click"/>
         <Label Content="Dashboard Management" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" Height="45" Width="328" FontSize="28" Background="#FFCCE5D3"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="674,238,0,0" VerticalAlignment="Top" Height="45" Width="91" Click="Logout_Click"/>
     </Grid>
 </Window>

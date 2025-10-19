@@ -1,4 +1,5 @@
-﻿using PRN212_Group4.BLL;
+﻿using Login_Register;
+using PRN212_Group4.BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,6 +51,15 @@ namespace PRN212_Group4
             w.ShowDialog();
             listUser.ItemsSource = service.GetAllUsers();
             Close();
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            ((App)Application.Current).CurrentUserId = null;
+
+            LoginWindow l = new();
+            l.Show();
+            this.Close();
         }
     }
 }
