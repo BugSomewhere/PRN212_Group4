@@ -8,14 +8,15 @@
         Title="UserPostWindow" Height="450" Width="800" Background="#FF99CC" FontFamily="Arial" FontSize="16">
     <Grid Loaded="Window_Loaded">
         <DataGrid x:Name="UserPostList" Margin="10,119,150,10">
-            
+
         </DataGrid>
         <Label Content="User Post" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="32"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="694,192,0,0" VerticalAlignment="Top" Height="39" Width="85" Click="Back_Click"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="694,272,0,0" VerticalAlignment="Top" Height="39" Width="85" Click="Back_Click"/>
         <Button Content="Update" HorizontalAlignment="Left" Margin="694,119,0,0" VerticalAlignment="Top" Height="39" Width="85" Click="Update_Click"/>
         <Label Content="Title" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" FontSize="22"/>
         <TextBox x:Name="Title" HorizontalAlignment="Left" Margin="85,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284" FontSize="22"/>
         <Button Content="Search" HorizontalAlignment="Left" Margin="400,76,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="Search_Click"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="694,192,0,0" VerticalAlignment="Top" Height="39" Width="85" Click="Delete_Click"/>
 
     </Grid>
 </Window>

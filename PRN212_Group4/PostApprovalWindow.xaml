@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PRN212_Group4"
         mc:Ignorable="d"
         Title="Post Approval - Kiểm Duyệt Sản Phẩm" Height="600" Width="900"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded" Background="#FF99CC">
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

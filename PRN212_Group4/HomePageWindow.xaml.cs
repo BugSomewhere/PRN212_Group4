@@ -59,12 +59,19 @@ namespace PRN212_Group4
 
         private void Payment_Click(object sender, RoutedEventArgs e)
         {
+            List<Product> selectProducts = ProductList.SelectedItems.Cast<Product>().ToList();
             RefreshProductList();
+            PaymentWindow p = new(selectProducts);
+            p.ShowDialog();
+            Close();
         }
 
         private void Order_Click(object sender, RoutedEventArgs e)
         {
             RefreshProductList();
+            UserOrderWindow u = new UserOrderWindow();
+            u.Show();
+            Close();
         }
 
         private void Update_Account_Click(object sender, RoutedEventArgs e)

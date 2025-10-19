@@ -92,13 +92,14 @@ namespace PRN212_Group4
 
             LoginWindow l = new();
             l.Show();
-            this.Close();
+            Close();
         }
 
         private void PostApproval_Click(object sender, RoutedEventArgs e)
         {
             PostApprovalWindow w = new PostApprovalWindow();
             w.ShowDialog();
+            Close();
         }
     }
 }

@@ -21,7 +21,6 @@ namespace PRN212_Group4
             if (productToUpdate != null)
             {
                 txtType.Text = productToUpdate.Type ?? "";
-                txtStatus.Text = productToUpdate.Status ?? "";
                 txtBrand.Text = productToUpdate.Brand ?? "";
                 txtModel.Text = productToUpdate.Model ?? "";
                 txtTitle.Text = productToUpdate.Title ?? "";
@@ -47,7 +46,6 @@ namespace PRN212_Group4
 
                     // Update product properties
                     productToUpdate.Type = txtType.Text.Trim();
-                    productToUpdate.Status = txtStatus.Text.Trim();
                     productToUpdate.Brand = txtBrand.Text.Trim();
                     productToUpdate.Model = txtModel.Text.Trim();
                     productToUpdate.Title = txtTitle.Text.Trim();

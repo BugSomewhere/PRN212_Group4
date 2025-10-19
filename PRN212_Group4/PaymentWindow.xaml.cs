@@ -1,4 +1,5 @@
-﻿using PRN212_Group4.DAL.Entities;
+﻿using PRN212_Group4.BLL;
+using PRN212_Group4.DAL.Entities;
 using QRCoder;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,6 @@ namespace PRN212_Group4
                                $"Tổng tiền: {totalPrice:N0} VND\n" +
                                $"Chi tiết: {productList}";
 
-
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrContent, QRCodeGenerator.ECCLevel.Q);
             QRCode qrCode = new QRCode(qrCodeData);
@@ -58,9 +58,42 @@ namespace PRN212_Group4
 
         private void ConfirmPayment_Click(object sender, RoutedEventArgs e)
         {
+            var currentUserId = ((App)Application.Current).CurrentUserId ?? 0;
+            if (currentUserId == 0)
+            {
+                MessageBox.Show("Vui lòng đăng nhập để thanh toán!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            var orderService = new OrderService();
             decimal total = _products.Sum(p => p.Price ?? 0);
-            MessageBox.Show($"Thanh toán thành công {_products.Count} sản phẩm, tổng cộng {total:N0} VND!");
-            this.Close();
+
+            try
+            {
+                foreach (var product in _products)
+                {
+                    orderService.CreateOrder(currentUserId, product.Id, product.Price ?? 0);
+                }
+
+                // Update status cho các order mới tạo (giả sử lấy last orders tương ứng số product)
+                var recentOrders = orderService.GetAllOrders().OrderByDescending(o => o.Id).Take(_products.Count).ToList();
+                foreach (var order in recentOrders)
+                {
+                    orderService.UpdateOrderStatus(order.Id, "paid");
+                }
+
+                MessageBox.Show($"Thanh toán thành công {_products.Count} sản phẩm, tổng cộng {total:N0} VND! Credit đã được cập nhật.");
+                this.DialogResult = true; // Để CartWindow clear cart nếu gọi từ đó
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi thanh toán: {ex.Message}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            HomePageWindow h = new HomePageWindow();
+            h.Show();
+            Close();
         }
     }
 }
+
+

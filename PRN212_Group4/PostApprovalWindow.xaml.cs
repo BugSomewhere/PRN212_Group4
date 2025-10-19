@@ -26,7 +26,7 @@ namespace PRN212_Group4
         private void RefreshPendingProducts()
         {
             // Lấy list Product với Status = "Pending"
-            var pendingProducts = productService.GetAllProducts().Where(p => p.Status == "Pending").ToList();
+            var pendingProducts = productService.GetAllProducts().Where(p => p.Status.ToLower() == "pending").ToList();
             dgPendingProducts.ItemsSource = pendingProducts;
 
             if (pendingProducts.Count == 0)
@@ -74,7 +74,7 @@ namespace PRN212_Group4
 
             if (MessageBox.Show("Bạn có chắc muốn approve sản phẩm này?", "Xác Nhận", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                selectedProduct.Status = "Approved";
+                selectedProduct.Status = "approved";
                 productService.UpdateProduct(selectedProduct);
                 MessageBox.Show("Sản phẩm đã được approve thành công!", "Thành Công", MessageBoxButton.OK, MessageBoxImage.Information);
                 RefreshPendingProducts();

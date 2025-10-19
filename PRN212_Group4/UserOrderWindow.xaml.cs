@@ -45,7 +45,7 @@ namespace PRN212_Group4
         {
             var products = productService.GetAllProducts();
 
-            if (user_id == 1)
+            if (user_id == 2)
             {
                 //Admin view 
                 var orders = userOrders.GetAllOrders();

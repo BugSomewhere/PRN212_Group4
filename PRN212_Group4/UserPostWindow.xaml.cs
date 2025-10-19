@@ -43,7 +43,7 @@ namespace PRN212_Group4
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            UpdateProductWindow u = new UpdateProductWindow(new Product());
+            UpdateProductWindow u = new UpdateProductWindow((Product)UserPostList.SelectedItem);
             u.ShowDialog();
             RefreshPostList();
         }
@@ -59,6 +59,12 @@ namespace PRN212_Group4
                 UserPostList.ItemsSource = service.SearchUserProducts(Title.Text, userID);
             else
                 RefreshPostList();
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            service.DeleteProduct(((Product)UserPostList.SelectedItem).Id);
+            RefreshPostList();
         }
     }
 }
