@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="DashboardWindow" Height="450" Width="800" Loaded="Window_Loaded" Background="#FF99CC" FontFamily="Arial" FontSize="14">
     <Grid>
+        <Label Content="Dashboard Management" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" Height="45" Width="328" FontSize="28" Background="#FFCCE5D3"/>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,70,0,0">
+            <Label Content="Thống Kê:" FontSize="18"/>
+            <TextBlock x:Name="txtUsersStats" Text="Số User theo Role: " Margin="10,5"/>
+            <TextBlock x:Name="txtProductsStats" Text="Số Product theo Status: " Margin="10,5"/>
+            <TextBlock x:Name="txtOrdersTotal" Text="Tổng Orders: " Margin="10,5"/>
+            <TextBlock x:Name="txtRevenueTotal" Text="Tổng Revenue: " Margin="10,5"/>
+        </StackPanel>
+
         <DataGrid x:Name="listUser" Margin="30,81,152,39" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="50"/>
@@ -16,9 +26,10 @@
                 <DataGridTextColumn Header="TotalCredit" Binding="{Binding TotalCredit}" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
+        
         <Button Content="ProductList" HorizontalAlignment="Left" Margin="674,81,0,0" VerticalAlignment="Top" Height="45" Width="91" Click="Button_Click"/>
         <Button x:Name="btnUserManagement" Content="User Management" HorizontalAlignment="Left" Margin="674,155,0,0" VerticalAlignment="Top" Height="45" Width="91" Click="UserManagement_Click"/>
-        <Label Content="Dashboard Management" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" Height="45" Width="328" FontSize="28" Background="#FFCCE5D3"/>
-        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="674,238,0,0" VerticalAlignment="Top" Height="45" Width="91" Click="Logout_Click"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="674,317,0,0" VerticalAlignment="Top" Height="45" Width="91" Click="Logout_Click"/>
+        <Button Content="Post Approval" HorizontalAlignment="Left" Margin="674,238,0,0" VerticalAlignment="Top" Height="45" Width="91" Click="PostApproval_Click"/>
     </Grid>
 </Window>

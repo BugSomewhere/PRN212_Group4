@@ -25,6 +25,15 @@ namespace PRN212_Group4
         public DashboardWindow()
         {
             InitializeComponent();
+            //// Kiểm tra quyền admin
+            //var currentUser = ((App)Application.Current).CurrentUser;
+            //if (currentUser == null || currentUser.RoleId != 1)
+            //{
+            //    MessageBox.Show("Chỉ admin mới truy cập được Dashboard!", "Lỗi Quyền", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    LoginWindow login = new LoginWindow();
+            //    login.Show();
+            //    this.Close();
+            //}
         }
 
         public void refreshData()
@@ -36,7 +45,31 @@ namespace PRN212_Group4
         {
            listUser.ItemsSource = service.GetAllUsers();
             refreshData();
+            //LoadStats();
+            //RefreshUserList();
         }
+
+        //private void LoadStats()
+        //{
+        //    var stats = service.GetDashboardStats();
+
+        //    // Hiển thị User theo Role
+        //    var usersByRole = (Dictionary<int, int>)stats["UsersByRole"];
+        //    txtUsersStats.Text = $"Số User theo Role: Admin: {usersByRole.GetValueOrDefault(1, 0)}, User: {usersByRole.GetValueOrDefault(2, 0)}";
+
+        //    // Product theo Status
+        //    var productsByStatus = (Dictionary<string, int>)stats["ProductsByStatus"];
+        //    txtProductsStats.Text = $"Số Product theo Status: Pending: {productsByStatus.GetValueOrDefault("Pending", 0)}, Approved: {productsByStatus.GetValueOrDefault("Approved", 0)}, Rejected: {productsByStatus.GetValueOrDefault("Rejected", 0)}";
+
+        //    // Tổng Orders và Revenue
+        //    txtOrdersTotal.Text = $"Tổng Orders: {stats["TotalOrders"]}";
+        //    txtRevenueTotal.Text = $"Tổng Revenue: {((decimal)stats["TotalRevenue"]):N0} VND";
+        //}
+
+        //private void RefreshUserList()
+        //{
+        //    listUser.ItemsSource = service.GetAllUsers();
+        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -60,6 +93,12 @@ namespace PRN212_Group4
             LoginWindow l = new();
             l.Show();
             this.Close();
+        }
+
+        private void PostApproval_Click(object sender, RoutedEventArgs e)
+        {
+            PostApprovalWindow w = new PostApprovalWindow();
+            w.ShowDialog();
         }
     }
 }
