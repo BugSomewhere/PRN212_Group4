@@ -117,8 +117,15 @@ namespace PRN212_Group4
             try
             {
                 dynamic item = orderDetail;
-                int productId = item.ProductId; 
-                
+                int productId = item.ProductId;
+                string orderStatus = item.OrderStatus;
+                if (orderStatus.ToLower().Trim() != "success")
+                {
+                    MessageBox.Show("Feedback can only be provided for Success Orders.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+
+
                 if (productId != 0)
                 {
                     FeedbackManagment w = new FeedbackManagment(currentUserId, productId);
@@ -139,7 +146,14 @@ namespace PRN212_Group4
         private void btntransactiondetail_Click(object sender, RoutedEventArgs e)
         {
             TransactionDetailWindow w = new TransactionDetailWindow(currentUserId);
-            w.ShowDialog();
+            w.Show();
+            this.Close();
+        }
+
+        private void btnBacktohomepage_Click(object sender, RoutedEventArgs e)
+        {
+            HomePageWindow homePageWindow = new HomePageWindow();
+            homePageWindow.Show();
             this.Close();
         }
     }

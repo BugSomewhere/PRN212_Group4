@@ -23,6 +23,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="lbtransactiondetail" Content="Transaction Detail" HorizontalAlignment="Left" Height="43" Margin="113,10,0,0" VerticalAlignment="Top" Width="533" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" />
+        <Button x:Name="btnBacktohomepage" Content="Back to HomePage" HorizontalAlignment="Center" Height="43" Margin="0,347,0,0" VerticalAlignment="Top" Width="744" Click="btnBacktohomepage_Click"/>
 
 
     </Grid>

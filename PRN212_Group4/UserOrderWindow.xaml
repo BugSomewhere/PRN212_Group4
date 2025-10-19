@@ -28,7 +28,8 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btntransactiondetail" Content="Transaction Detail" HorizontalAlignment="Left" Height="43" Margin="28,340,0,0" VerticalAlignment="Top" Width="126" Click="btntransactiondetail_Click"/>
+        <Button x:Name="btntransactiondetail" Content="Transaction Detail" HorizontalAlignment="Left" Height="43" Margin="28,342,0,0" VerticalAlignment="Top" Width="338" Click="btntransactiondetail_Click"/>
+        <Button x:Name="btnBacktohomepage" Content="Return to HomePage" HorizontalAlignment="Left" Height="43" Margin="398,342,0,0" VerticalAlignment="Top" Width="369" Click="btnBacktohomepage_Click"/>
 
     </Grid>
 </Window>

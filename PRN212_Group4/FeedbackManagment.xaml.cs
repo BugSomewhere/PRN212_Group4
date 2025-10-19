@@ -220,5 +220,12 @@ namespace PRN212_Group4
                 }
             }
         }
+
+        private void btnBacktohomepage_Click(object sender, RoutedEventArgs e)
+        {
+            HomePageWindow homePageWindow = new HomePageWindow();
+            homePageWindow.Show();
+            this.Close();
+        }
     }
 }

@@ -22,6 +22,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="lbProductTitle" Content="" HorizontalAlignment="Left" Height="49" Margin="388,47,0,0" VerticalAlignment="Top" Width="334" HorizontalContentAlignment="Center"/>
-        <Button x:Name="btnfeedback" Content="FeedBack" HorizontalAlignment="Left" Height="39" Margin="20,372,0,0" VerticalAlignment="Top" Width="115" Click="btnfeedback_Click"/>
+        <Button x:Name="btnfeedback" Content="FeedBack" HorizontalAlignment="Left" Height="39" Margin="15,372,0,0" VerticalAlignment="Top" Width="115" Click="btnfeedback_Click"/>
+        <Button x:Name="btnBacktohomepage" Content="HomePage" HorizontalAlignment="Left" Height="39" Margin="140,372,0,0" VerticalAlignment="Top" Width="110" Click="btnBacktohomepage_Click"/>
     </Grid>
 </Window>
