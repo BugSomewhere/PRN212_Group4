@@ -20,7 +20,7 @@
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="120,140,0,0" VerticalAlignment="Top" Width="200"/>
 
         <Label Content="Total Credit:" HorizontalAlignment="Left" Margin="0,180,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtTotalCredit" HorizontalAlignment="Left" Margin="120,180,0,0" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="txtTotalCredit" HorizontalAlignment="Left" Margin="120,180,0,0" VerticalAlignment="Top" Width="200" IsReadOnly="True"/>
 
         <Button Content="Save" HorizontalAlignment="Left" Margin="120,240,0,0" VerticalAlignment="Top" Width="100" Click="Save_Click"/>
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="240,240,0,0" VerticalAlignment="Top" Width="100" Click="Cancel_Click"/>

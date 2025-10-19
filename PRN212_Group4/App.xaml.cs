@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using PRN212_Group4.DAL.Entities;
+using System.Configuration;
 using System.Data;
 using System.Windows;
 
@@ -10,6 +11,8 @@ namespace PRN212_Group4
     public partial class App : Application
     {
         public int? CurrentUserId { get; set; }
+
+        public User? CurrentUser { get; set; }
     }
 
 }

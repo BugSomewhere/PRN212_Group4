@@ -42,10 +42,15 @@ namespace Login_Register
             if (user != null && user.RoleId == 1)
             {
                 ((App)Application.Current).CurrentUserId = user.Id;
+                ((App)Application.Current).CurrentUser = user;
 
-               
+                //if(((App)Application.Current).CurrentUser != null)
+                //{
+                //    MessageBox.Show("User " + ((App)Application.Current).CurrentUser.Email + ((App)Application.Current).CurrentUser.Id);
+                //}
+
                 MessageBox.Show("Login successful!");
-                // Open the main window or dashboard here
+         
                 DashboardWindow d = new();
                 d.Show();
                 this.Close();
@@ -53,9 +58,9 @@ namespace Login_Register
             else if (user != null && user.RoleId == 2)
             {
                 ((App)Application.Current).CurrentUserId = user.Id;
+                ((App)Application.Current).CurrentUser = user;
 
                 MessageBox.Show("Login successful!");
-                // Open the main window or dashboard here
 
                 HomePageWindow h = new();
                 h.Show();

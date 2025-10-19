@@ -16,6 +16,8 @@ namespace PRN212_Group4
             userToUpdate = user;
         }
 
+        
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             if (userToUpdate != null)
@@ -35,8 +37,7 @@ namespace PRN212_Group4
                 userToUpdate.FullName = txtFullName.Text;
                 userToUpdate.Email = txtEmail.Text;
                 userToUpdate.RoleId = int.Parse(txtRoleId.Text);
-                userToUpdate.Password = txtPassword.Password; // Lưu ý: Hash nếu cần
-                userToUpdate.TotalCredit = decimal.Parse(txtTotalCredit.Text);
+                userToUpdate.Password = txtPassword.Password;
 
                 service.UpdateUser(userToUpdate);
                 MessageBox.Show("User updated successfully!");

@@ -71,8 +71,7 @@ namespace PRN212_Group4
 
         private void Update_Account_Click(object sender, RoutedEventArgs e)
         {
-            User user = new User();
-            user.Id = (int)((App)Application.Current).CurrentUserId;
+            User user = ((App)Application.Current).CurrentUser;
             UpdateUserWindow updateUserWindow = new UpdateUserWindow(user);
             updateUserWindow.ShowDialog();
             RefreshProductList();
