@@ -16,8 +16,6 @@ namespace PRN212_Group4
             userToUpdate = user;
         }
 
-        
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             if (userToUpdate != null)

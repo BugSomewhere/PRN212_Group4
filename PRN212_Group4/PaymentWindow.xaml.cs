@@ -16,6 +16,7 @@ namespace PRN212_Group4
     {
         private readonly List<Product> _products;
         private ProductService service = new();
+        private UserService userService = new();
 
         public PaymentWindow(List<Product> products)
         {

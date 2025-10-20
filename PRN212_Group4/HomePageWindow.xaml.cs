@@ -23,6 +23,7 @@ namespace PRN212_Group4
     public partial class HomePageWindow : Window
     {
         private ProductService service = new();
+        private UserService userService = new();
 
 
         public HomePageWindow()
@@ -85,13 +86,15 @@ namespace PRN212_Group4
 
         private void Update_Account_Click(object sender, RoutedEventArgs e)
         {
+
             if (((App)Application.Current).CurrentUser == null)
             {
                 MessageBox.Show("Invalid User");
                 return;
             }
             User user = ((App)Application.Current).CurrentUser;
-            UpdateUserWindow updateUserWindow = new UpdateUserWindow(user);
+            ((App)Application.Current).CurrentUser = userService.GetUserById(user.Id);
+            UpdateUserWindow updateUserWindow = new UpdateUserWindow(((App)Application.Current).CurrentUser);
             updateUserWindow.ShowDialog();
             RefreshProductList();
         }
