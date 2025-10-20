@@ -33,7 +33,6 @@ namespace Login_Register
 
             var user = userService.Login(Email.Text, Password.Password);
 
-
             if (user != null && user.RoleId == 1)
             {
                 ((App)Application.Current).CurrentUserId = user.Id;
@@ -45,7 +44,7 @@ namespace Login_Register
                 //}
 
                 MessageBox.Show("Login successful!");
-         
+                 
                 DashboardWindow d = new();
                 d.Show();
                 this.Close();

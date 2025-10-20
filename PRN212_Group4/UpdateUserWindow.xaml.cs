@@ -16,6 +16,20 @@ namespace PRN212_Group4
             userToUpdate = user;
         }
 
+        public void FillComboBox()
+        {
+            RoleService roleService = new RoleService();
+            List<Role> roles = roleService.GetAll();
+
+            combo.ItemsSource = roles.ToList();
+            combo.DisplayMemberPath = "Name";
+            combo.SelectedValuePath = "Id";
+
+
+            combo.SelectedValue = userToUpdate.RoleId;
+
+        }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             if (userToUpdate != null)
@@ -26,15 +40,20 @@ namespace PRN212_Group4
                 txtPassword.Password = userToUpdate.Password;
                 txtTotalCredit.Text = userToUpdate.TotalCredit.ToString();
             }
+            FillComboBox();
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            var id= combo.SelectedItem as Role;
+
             if (userToUpdate != null)
             {
                 userToUpdate.FullName = txtFullName.Text;
                 userToUpdate.Email = txtEmail.Text;
-                userToUpdate.RoleId = int.Parse(txtRoleId.Text);
+
+
+                userToUpdate.RoleId = id.Id;
                 userToUpdate.Password = txtPassword.Password;
 
                 service.UpdateUser(userToUpdate);
@@ -46,6 +65,11 @@ namespace PRN212_Group4
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void combo_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

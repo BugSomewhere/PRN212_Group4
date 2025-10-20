@@ -47,7 +47,7 @@ namespace PRN212_Group4
 
         public void RefreshProductList()
         {
-            ProductList.ItemsSource = service.GetAllApproveProducts();
+            ProductList.ItemsSource = service.GetAllApproveProducts().OrderByDescending(p=>p.Brand);
         }
 
         private void Search_Click(object sender, RoutedEventArgs e)

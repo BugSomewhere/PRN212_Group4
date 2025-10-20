@@ -14,7 +14,7 @@
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="120,60,0,0" VerticalAlignment="Top" Width="200"/>
 
         <Label Content="Role Id:" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtRoleId" HorizontalAlignment="Left" Margin="120,100,0,0" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="txtRoleId" Visibility="Hidden" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Width="200"/>
 
         <Label Content="Password:" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top"/>
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="120,140,0,0" VerticalAlignment="Top" Width="200"/>
@@ -24,5 +24,6 @@
 
         <Button Content="Save" HorizontalAlignment="Left" Margin="120,240,0,0" VerticalAlignment="Top" Width="100" Click="Save_Click"/>
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="240,240,0,0" VerticalAlignment="Top" Width="100" Click="Cancel_Click"/>
+        <ComboBox x:Name="combo" HorizontalAlignment="Left" Margin="120,102,0,0" VerticalAlignment="Top" Width="205" SelectionChanged="combo_SelectionChanged"/>
     </Grid>
 </Window>

@@ -10,10 +10,10 @@
         <Label Content="Login" HorizontalAlignment="Center" Margin="0,41,0,0" VerticalAlignment="Top" Height="45" Width="88" FontSize="28" Background="#FFCCE5D3"/>
         <Label Content="Email:" HorizontalAlignment="Left" Margin="85,142,0,0" VerticalAlignment="Top" Height="43" Width="110" FontSize="22"/>
         <Label Content="Password:" HorizontalAlignment="Left" Margin="85,217,0,0" VerticalAlignment="Top" Height="43" Width="110" FontSize="22"/>
-        <TextBox x:Name="Email" HorizontalAlignment="Left" Margin="244,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" Height="37" FontSize="22"/>
+        <TextBox x:Name="Email" HorizontalAlignment="Left" Margin="244,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" Height="37" FontSize="22" Text="long@gmail.com"/>
         <Button Content="Login" HorizontalAlignment="Left" Margin="518,320,0,0" VerticalAlignment="Top" Height="58" Width="100" FontSize="22" Click="Button_Click"/>
         <Button Content="Register" HorizontalAlignment="Left" Margin="244,320,0,0" VerticalAlignment="Top" Height="58" Width="118" FontSize="22" Click="Button_Click_1"/>
-        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="244,218,0,0" VerticalAlignment="Top" Width="436" Height="38" FontSize="22"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="244,218,0,0" VerticalAlignment="Top" Width="436" Height="38" FontSize="22" Password="123"/>
 
     </Grid>
 </Window>
